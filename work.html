@@ -150,6 +150,44 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Floating circles background */
+        .floating-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #242020, #000000);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .circle.blur {
+            filter: blur(40px);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px);
+            }
+            50% {
+                transform: translateY(-60px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-30px) translateX(-20px);
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -195,20 +233,31 @@
     <main id="main-content">
         
         <!-- HERO / INTRO (Work Page) -->
-        <section class="py-20 px-6 bg-white">
+        <section class="py-20 px-6 bg-brand-black">
             <div class="container mx-auto max-w-5xl text-center">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-gray-900 mb-6 fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-brand-white mb-6 fade-in-up">
                     Selected Work
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl text-light-gray leading-relaxed max-w-3xl mx-auto">
                     A curated collection of lettering, murals & food-art projects that I've brought to life for amazing clients and communities.
                 </p>
             </div>
         </section>
         
         <!-- PORTFOLIO GRID SECTION -->
-        <section class="py-12 px-6 bg-warm-white">
-            <div class="container mx-auto max-w-7xl">
+        <section class="py-12 px-6 bg-brand-black relative">
+            <!-- Floating Circles Background -->
+            <div class="floating-circles">
+                <div class="circle blur" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-duration: 25s;"></div>
+                <div class="circle" style="width: 150px; height: 150px; top: 20%; right: 10%; animation-duration: 18s; animation-delay: -5s;"></div>
+                <div class="circle blur" style="width: 400px; height: 400px; top: 50%; left: -10%; animation-duration: 30s; animation-delay: -10s;"></div>
+                <div class="circle" style="width: 200px; height: 200px; bottom: 20%; right: 5%; animation-duration: 22s; animation-delay: -8s;"></div>
+                <div class="circle blur" style="width: 250px; height: 250px; bottom: 10%; left: 20%; animation-duration: 28s; animation-delay: -15s;"></div>
+                <div class="circle" style="width: 100px; height: 100px; top: 40%; right: 25%; animation-duration: 20s; animation-delay: -3s;"></div>
+                <div class="circle blur" style="width: 350px; height: 350px; top: 60%; right: -5%; animation-duration: 35s; animation-delay: -12s;"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-7xl relative z-10">
                 
                 <!-- Project Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
