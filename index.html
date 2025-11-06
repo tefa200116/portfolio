@@ -105,17 +105,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(80, 80, 80, 0.4) 0%, rgba(50, 50, 50, 0.2) 30%, transparent 70%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(120, 120, 120, 0.6) 0%, rgba(80, 80, 80, 0.4) 25%, rgba(50, 50, 50, 0.2) 50%, transparent 70%);
             pointer-events: none;
             animation: pulse-glow 8s ease-in-out infinite;
+            z-index: 1;
         }
         
         @media (max-width: 768px) {
             .footer-gradient-bg {
-                width: 600px;
-                height: 600px;
+                width: 700px;
+                height: 700px;
             }
         }
         
@@ -294,7 +295,7 @@
             <!-- Centered Background Gradient -->
             <div class="footer-gradient-bg"></div>
             
-            <div class="relative z-10 container mx-auto max-w-4xl text-center">
+            <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
                 <!-- Main Heading -->
                 <h2 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-8 uppercase tracking-wide text-white fade-in-scroll">
