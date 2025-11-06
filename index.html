@@ -73,14 +73,11 @@
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
-            25% {
-                transform: translate(40px, -40px) scale(1.05);
+            33% {
+                transform: translate(30px, -30px) scale(1.05);
             }
-            50% {
-                transform: translate(-30px, 30px) scale(0.95);
-            }
-            75% {
-                transform: translate(20px, -20px) scale(1.02);
+            66% {
+                transform: translate(-20px, 20px) scale(0.95);
             }
         }
         
@@ -88,23 +85,11 @@
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
-            25% {
-                transform: translate(-35px, 35px) scale(0.95);
+            33% {
+                transform: translate(-25px, 25px) scale(0.95);
             }
-            50% {
-                transform: translate(25px, -25px) scale(1.05);
-            }
-            75% {
-                transform: translate(-20px, 20px) scale(0.98);
-            }
-        }
-        
-        @keyframes float-vertical {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                transform: translate(0, -50px) scale(1.03);
+            66% {
+                transform: translate(20px, -20px) scale(1.05);
             }
         }
         
@@ -115,6 +100,7 @@
             animation: pulse-glow 6s ease-in-out infinite, float 20s ease-in-out infinite;
             pointer-events: none;
             filter: blur(1px);
+            will-change: transform, opacity;
         }
         
         .gradient-circle-small {
@@ -124,6 +110,7 @@
             animation: pulse-glow 8s ease-in-out infinite, float-reverse 15s ease-in-out infinite;
             pointer-events: none;
             filter: blur(0.5px);
+            will-change: transform, opacity;
         }
         
         .gradient-circle-medium {
@@ -133,6 +120,7 @@
             animation: pulse-glow 7s ease-in-out infinite, float 18s ease-in-out infinite;
             pointer-events: none;
             filter: blur(0.8px);
+            will-change: transform, opacity;
         }
         
         /* Button hover effect */
@@ -154,6 +142,27 @@
         .email-link:hover {
             text-shadow: 0 0 35px rgba(255, 255, 255, 0.9);
             color: #f0f0f0;
+        }
+        
+        /* Centered radial gradient for footer */
+        .footer-gradient-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1200px;
+            height: 1200px;
+            background: radial-gradient(circle, rgba(150, 150, 150, 0.4) 0%, rgba(100, 100, 100, 0.3) 20%, rgba(50, 50, 50, 0.2) 40%, rgba(20, 20, 20, 0.1) 60%, transparent 80%);
+            pointer-events: none;
+            animation: pulse-glow 8s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-gradient-bg {
+                width: 800px;
+                height: 800px;
+            }
         }
         
         /* Circle card hover glow */
@@ -244,36 +253,33 @@
     </header>
     
     <!-- MAIN CONTENT -->
-    <main class="relative bg-black">
-        <!-- Global floating bubbles container - spans all sections -->
-        <div class="absolute inset-0 pointer-events-none z-0" style="height: 300vh;">
-            <!-- Hero section bubbles (0-100vh) -->
-            <div class="gradient-circle" style="width: 600px; height: 600px; top: 10vh; left: -10%; animation-delay: 0s;"></div>
-            <div class="gradient-circle" style="width: 500px; height: 500px; top: 20vh; right: -10%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 60vh; left: 15%; animation-delay: 1s;"></div>
-            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 5vh; left: 50%; animation-delay: 3s;"></div>
-            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 85vh; right: 20%; animation-delay: 1.5s;"></div>
-            <div class="gradient-circle-medium" style="width: 450px; height: 450px; top: 40vh; right: 5%; animation-delay: 2.5s;"></div>
+    <main class="relative">
+        
+        <!-- Global Floating Circles - spans across all sections -->
+        <div class="absolute inset-0 pointer-events-none z-0" style="min-height: 100%; overflow: visible;">
+            <!-- Hero section area circles - upper third -->
+            <div class="gradient-circle" style="width: 600px; height: 600px; top: 100px; left: -80px; animation-delay: 0s;"></div>
+            <div class="gradient-circle" style="width: 500px; height: 500px; top: 200px; right: -80px; animation-delay: 2s;"></div>
+            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 600px; left: 12%; animation-delay: 1s;"></div>
+            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 80px; left: 48%; animation-delay: 3s;"></div>
+            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 750px; right: 18%; animation-delay: 1.5s;"></div>
+            <div class="gradient-circle-medium" style="width: 450px; height: 450px; top: 450px; right: 3%; animation-delay: 2.5s;"></div>
             
-            <!-- Middle section bubbles (100-200vh) -->
-            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 110vh; left: -5%; animation-delay: 0s;"></div>
-            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 150vh; right: -8%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 190vh; left: 10%; animation-delay: 1s;"></div>
-            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 130vh; left: 50%; animation-delay: 3s;"></div>
+            <!-- Mid-section circles (What I Do area) - middle third -->
+            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 950px; left: -40px; animation-delay: 0.5s;"></div>
+            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 1200px; right: -70px; animation-delay: 2.2s;"></div>
+            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 1100px; left: 8%; animation-delay: 1.2s;"></div>
+            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 1300px; left: 48%; animation-delay: 3.5s;"></div>
             
-            <!-- Footer section bubbles (200-300vh) -->
-            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 215vh; left: 8%; animation-delay: 0s;"></div>
-            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 225vh; right: 12%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-small" style="width: 280px; height: 280px; top: 270vh; left: 15%; animation-delay: 1.5s;"></div>
-            <div class="gradient-circle-medium" style="width: 360px; height: 360px; top: 265vh; right: 8%; animation-delay: 2.5s;"></div>
-            
-            <!-- Transition bubbles between sections -->
-            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 95vh; left: 25%; animation-delay: 1s; animation: pulse-glow 8s ease-in-out infinite, float-vertical 12s ease-in-out infinite;"></div>
-            <div class="gradient-circle-medium" style="width: 350px; height: 350px; top: 195vh; right: 25%; animation-delay: 2.5s; animation: pulse-glow 7s ease-in-out infinite, float-vertical 14s ease-in-out infinite;"></div>
+            <!-- Footer section circles - lower third -->
+            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 1650px; left: 6%; animation-delay: 0.8s;"></div>
+            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 1800px; right: 10%; animation-delay: 2.8s;"></div>
+            <div class="gradient-circle-small" style="width: 280px; height: 280px; top: 2000px; left: 13%; animation-delay: 1.8s;"></div>
+            <div class="gradient-circle-medium" style="width: 360px; height: 360px; top: 1950px; right: 6%; animation-delay: 3.2s;"></div>
         </div>
         
         <!-- HERO SECTION -->
-        <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 bg-black">
+        <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
             
             <div class="relative z-10 text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 animate-fadeInUp tracking-wide">
@@ -291,7 +297,7 @@
         </section>
         
         <!-- WHAT I DO SECTION -->
-        <section class="relative py-24 px-6 bg-black">
+        <section class="relative py-24 px-6">
             <div class="container mx-auto max-w-6xl relative z-10">
                 
                 <!-- Section Title -->
@@ -351,6 +357,9 @@
         
         <!-- FOOTER / CALL TO ACTION -->
         <footer class="relative py-32 px-6 bg-black">
+            <!-- Centered Background Gradient -->
+            <div class="footer-gradient-bg"></div>
+            
             <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
                 <!-- Main Heading -->
