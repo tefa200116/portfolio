@@ -73,11 +73,14 @@
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
-            33% {
-                transform: translate(30px, -30px) scale(1.05);
+            25% {
+                transform: translate(40px, -40px) scale(1.05);
             }
-            66% {
-                transform: translate(-20px, 20px) scale(0.95);
+            50% {
+                transform: translate(-30px, 30px) scale(0.95);
+            }
+            75% {
+                transform: translate(20px, -20px) scale(1.02);
             }
         }
         
@@ -85,11 +88,23 @@
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
-            33% {
-                transform: translate(-25px, 25px) scale(0.95);
+            25% {
+                transform: translate(-35px, 35px) scale(0.95);
             }
-            66% {
-                transform: translate(20px, -20px) scale(1.05);
+            50% {
+                transform: translate(25px, -25px) scale(1.05);
+            }
+            75% {
+                transform: translate(-20px, 20px) scale(0.98);
+            }
+        }
+        
+        @keyframes float-vertical {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(0, -50px) scale(1.03);
             }
         }
         
@@ -250,17 +265,36 @@
     </header>
     
     <!-- MAIN CONTENT -->
-    <main>
+    <main class="relative bg-black">
+        <!-- Global floating bubbles container - spans all sections -->
+        <div class="absolute inset-0 pointer-events-none z-0" style="height: 300vh;">
+            <!-- Hero section bubbles (0-100vh) -->
+            <div class="gradient-circle" style="width: 600px; height: 600px; top: 10vh; left: -10%; animation-delay: 0s;"></div>
+            <div class="gradient-circle" style="width: 500px; height: 500px; top: 20vh; right: -10%; animation-delay: 2s;"></div>
+            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 60vh; left: 15%; animation-delay: 1s;"></div>
+            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 5vh; left: 50%; animation-delay: 3s;"></div>
+            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 85vh; right: 20%; animation-delay: 1.5s;"></div>
+            <div class="gradient-circle-medium" style="width: 450px; height: 450px; top: 40vh; right: 5%; animation-delay: 2.5s;"></div>
+            
+            <!-- Middle section bubbles (100-200vh) -->
+            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 110vh; left: -5%; animation-delay: 0s;"></div>
+            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 150vh; right: -8%; animation-delay: 2s;"></div>
+            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 190vh; left: 10%; animation-delay: 1s;"></div>
+            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 130vh; left: 50%; animation-delay: 3s;"></div>
+            
+            <!-- Footer section bubbles (200-300vh) -->
+            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 215vh; left: 8%; animation-delay: 0s;"></div>
+            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 225vh; right: 12%; animation-delay: 2s;"></div>
+            <div class="gradient-circle-small" style="width: 280px; height: 280px; top: 270vh; left: 15%; animation-delay: 1.5s;"></div>
+            <div class="gradient-circle-medium" style="width: 360px; height: 360px; top: 265vh; right: 8%; animation-delay: 2.5s;"></div>
+            
+            <!-- Transition bubbles between sections -->
+            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 95vh; left: 25%; animation-delay: 1s; animation: pulse-glow 8s ease-in-out infinite, float-vertical 12s ease-in-out infinite;"></div>
+            <div class="gradient-circle-medium" style="width: 350px; height: 350px; top: 195vh; right: 25%; animation-delay: 2.5s; animation: pulse-glow 7s ease-in-out infinite, float-vertical 14s ease-in-out infinite;"></div>
+        </div>
         
         <!-- HERO SECTION -->
-        <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 overflow-hidden">
-            <!-- Background gradient circles -->
-            <div class="gradient-circle" style="width: 600px; height: 600px; top: 10%; left: -10%; animation-delay: 0s;"></div>
-            <div class="gradient-circle" style="width: 500px; height: 500px; top: 20%; right: -10%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 60%; left: 15%; animation-delay: 1s;"></div>
-            <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 5%; left: 50%; animation-delay: 3s;"></div>
-            <div class="gradient-circle-small" style="width: 350px; height: 350px; bottom: 15%; right: 20%; animation-delay: 1.5s;"></div>
-            <div class="gradient-circle-medium" style="width: 450px; height: 450px; top: 40%; right: 5%; animation-delay: 2.5s;"></div>
+        <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 bg-black">
             
             <div class="relative z-10 text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 animate-fadeInUp tracking-wide">
@@ -278,13 +312,7 @@
         </section>
         
         <!-- WHAT I DO SECTION -->
-        <section class="relative py-24 px-6 overflow-hidden">
-            <!-- Background floating circles -->
-            <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 10%; left: -5%; animation-delay: 0s;"></div>
-            <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 50%; right: -8%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-small" style="width: 300px; height: 300px; bottom: 10%; left: 10%; animation-delay: 1s;"></div>
-            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 30%; left: 50%; animation-delay: 3s;"></div>
-            
+        <section class="relative py-24 px-6 bg-black">
             <div class="container mx-auto max-w-6xl relative z-10">
                 
                 <!-- Section Title -->
@@ -343,15 +371,9 @@
         </section>
         
         <!-- FOOTER / CALL TO ACTION -->
-        <footer class="relative py-32 px-6 bg-black overflow-hidden">
+        <footer class="relative py-32 px-6 bg-black">
             <!-- Centered Background Gradient -->
             <div class="footer-gradient-bg"></div>
-            
-            <!-- Additional floating circles -->
-            <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 15%; left: 8%; animation-delay: 0s;"></div>
-            <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 25%; right: 12%; animation-delay: 2s;"></div>
-            <div class="gradient-circle-small" style="width: 280px; height: 280px; bottom: 20%; left: 15%; animation-delay: 1.5s;"></div>
-            <div class="gradient-circle-medium" style="width: 360px; height: 360px; bottom: 15%; right: 8%; animation-delay: 2.5s;"></div>
             
             <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
