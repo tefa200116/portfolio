@@ -116,6 +116,11 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
+        /* Radial gradient background */
+        .bg-gradient-radial {
+            background: radial-gradient(circle at center, var(--tw-gradient-stops));
+        }
+        
         /* Mobile menu animation */
         .mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -139,15 +144,15 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="text-2xl font-display font-bold text-brand-black">
+                <div class="text-xl font-display font-bold text-brand-black uppercase tracking-wider">
                     <a href="#" class="hover:text-medium-gray transition-colors">Portfolio</a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-brand-black transition-colors font-medium">Home</a>
-                    <a href="work.html" class="text-gray-700 hover:text-brand-black transition-colors font-medium">Work</a>
-                    <a href="about.html" class="text-gray-700 hover:text-brand-black transition-colors font-medium">About</a>
+                    <a href="#" class="text-gray-700 hover:text-brand-black transition-colors font-medium uppercase tracking-wide text-sm hover:underline underline-offset-8">Home</a>
+                    <a href="work.html" class="text-gray-700 hover:text-brand-black transition-colors font-medium uppercase tracking-wide text-sm hover:underline underline-offset-8">Work</a>
+                    <a href="about.html" class="text-gray-700 hover:text-brand-black transition-colors font-medium uppercase tracking-wide text-sm hover:underline underline-offset-8">About Me</a>
                 </div>
                 
                 <!-- Mobile Menu Toggle -->
@@ -173,145 +178,104 @@
     <main id="main-content">
         
         <!-- HERO SECTION -->
-        <section class="py-20 px-6 bg-gradient-to-br from-brand-black via-dark-gray to-medium-gray">
-            <div class="container mx-auto text-center max-w-4xl">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-brand-white mb-6 fade-in-up">
-                    Hi, my name is <span class="text-brand-white">Estefania Gomez</span>
+        <section class="min-h-screen flex items-center justify-center px-6 bg-brand-black relative overflow-hidden">
+            <!-- Radial gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-radial from-medium-gray/30 via-brand-black to-brand-black"></div>
+            
+            <div class="container mx-auto text-center max-w-5xl relative z-10">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold uppercase text-brand-white mb-6 fade-in-up tracking-wider">
+                    Create Stories<br>With Design
                 </h1>
-                <p class="text-xl md:text-2xl text-light-gray mb-8 fade-in-delay-1">
+                <p class="text-xl md:text-2xl text-gray-400 mb-12 fade-in-delay-1 max-w-3xl mx-auto">
                     Creating beautiful experiences through design, marketing, and storytelling.
                 </p>
-                <a href="work.html" class="inline-block bg-brand-white text-brand-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-light-gray transition-all fade-in-delay-2">
+                <a href="work.html" class="inline-block bg-brand-white text-brand-black px-10 py-4 rounded-none font-semibold text-lg uppercase tracking-wider hover:scale-105 transition-transform fade-in-delay-2">
                     Explore My Work
                 </a>
             </div>
         </section>
         
         <!-- WHAT I DO / SPECIALIZATION -->
-        <section id="work" class="py-24 px-6 bg-white">
-            <div class="container mx-auto max-w-6xl">
+        <section id="work" class="py-24 px-6 bg-brand-black relative">
+            <!-- Radial gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-radial from-medium-gray/20 via-brand-black to-brand-black"></div>
+            
+            <div class="container mx-auto max-w-6xl relative z-10">
                 <!-- Section Heading -->
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-gray-900 mb-4">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-center text-brand-white mb-3 uppercase tracking-wider">
                     What I Do
                 </h2>
-                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-                    Specializing in web design, marketing, and web development
+                <p class="text-lg text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                    Specialized in web design, marketing, and web development
                 </p>
                 
-                <!-- Three Column Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Three Circular Thumbnails -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     
-                    <!-- Card 1: Web Design -->
-                    <div class="card-hover bg-light-gray rounded-3xl overflow-hidden shadow-lg">
-                        <div class="h-64 bg-gradient-to-br from-dark-gray to-medium-gray flex items-center justify-center">
-                            <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Circle 1: Web Design -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-6 hover:scale-105 transition-transform">
+                            <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl font-display font-semibold text-gray-900">
-                                Web Design
-                            </h3>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white uppercase tracking-wider">
+                            Web Design
+                        </h3>
                     </div>
                     
-                    <!-- Card 2: Marketing -->
-                    <div class="card-hover bg-light-gray rounded-3xl overflow-hidden shadow-lg">
-                        <div class="h-64 bg-gradient-to-br from-dark-gray to-medium-gray flex items-center justify-center">
-                            <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Circle 2: Marketing -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-6 hover:scale-105 transition-transform">
+                            <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                             </svg>
                         </div>
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl font-display font-semibold text-gray-900">
-                                Marketing
-                            </h3>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white uppercase tracking-wider">
+                            Marketing
+                        </h3>
                     </div>
                     
-                    <!-- Card 3: Web Development -->
-                    <div class="card-hover bg-light-gray rounded-3xl overflow-hidden shadow-lg">
-                        <div class="h-64 bg-gradient-to-br from-dark-gray to-medium-gray flex items-center justify-center">
-                            <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Circle 3: Web Development -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-48 h-48 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center mb-6 hover:scale-105 transition-transform">
+                            <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl font-display font-semibold text-gray-900">
-                                Web Development
-                            </h3>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white uppercase tracking-wider">
+                            Web Development
+                        </h3>
                     </div>
                     
                 </div>
                 
                 <!-- CTA Button -->
                 <div class="text-center">
-                    <a href="work.html" class="inline-block bg-brand-black text-brand-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-dark-gray transition-all">
+                    <a href="work.html" class="inline-block bg-brand-white text-brand-black px-10 py-4 rounded-none font-semibold text-base uppercase tracking-wider hover:scale-105 transition-transform">
                         View My Entire Portfolio
                     </a>
                 </div>
             </div>
         </section>
-        
-        <!-- ABOUT / PERSONAL INVITATION -->
-        <section id="about" class="py-24 px-6 bg-gradient-to-br from-dark-gray to-medium-gray">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    
-                    <!-- Image Side -->
-                    <div class="order-2 md:order-1">
-                        <div class="relative">
-                            <!-- Decorative background circle -->
-                            <div class="absolute -top-6 -left-6 w-64 h-64 bg-light-gray rounded-full opacity-20 blur-3xl"></div>
-                            <div class="relative bg-medium-light-gray rounded-3xl overflow-hidden shadow-2xl">
-                                <!-- Placeholder for portrait photo -->
-                                <div class="aspect-square bg-gradient-to-br from-medium-gray via-medium-light-gray to-dark-gray flex items-center justify-center">
-                                    <svg class="w-32 h-32 text-light-gray opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Text Side -->
-                    <div class="order-1 md:order-2">
-                        <h2 class="text-4xl md:text-5xl font-display font-bold text-brand-white mb-6">
-                            New around here?
-                        </h2>
-                        <p class="text-2xl text-light-gray font-semibold mb-6">
-                            Let me introduce myself!
-                        </p>
-                        <p class="text-lg text-light-gray leading-relaxed mb-6">
-                            If you've made it this far down the page, we probably have a few things in common and would be friends IRL.
-                        </p>
-                        <p class="text-lg text-light-gray leading-relaxed mb-8">
-                            I believe in creating work that's not just beautiful, but meaningful. Whether it's through hand-lettered designs, colorful murals, or playful food art, I love bringing joy and creativity into the everyday.
-                        </p>
-                        <p class="text-lg text-light-gray leading-relaxed mb-8">
-                            When I'm not creating, you'll find me exploring new cafes, hunting for vintage treasures, or probably eating way too much ice cream. 🍦
-                        </p>
-                        <a href="about.html" class="inline-block bg-brand-white text-brand-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-light-gray transition-all">
-                            Get to Know Me
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
+
         
         <!-- FOOTER -->
-        <footer class="py-12 px-6 bg-brand-black text-white">
+        <footer class="py-20 px-6 bg-brand-black text-white border-t border-gray-800">
             <div class="container mx-auto max-w-6xl text-center">
-                <h3 class="text-xl font-display font-semibold mb-4">Let's Connect</h3>
-                <p class="text-light-gray mb-4">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 uppercase tracking-wider">Let's Connect!</h2>
+                <p class="text-gray-400 mb-6 text-lg">
                     Ready to work together?
                 </p>
-                <a href="mailto:estefaniagomezcontact@gmail.com" class="text-light-gray hover:text-white transition-colors text-lg">
+                <a href="mailto:estefaniagomezcontact@gmail.com" class="text-white hover:text-gray-300 transition-colors text-xl font-medium mb-8 inline-block">
                     estefaniagomezcontact@gmail.com
                 </a>
+                <div class="flex justify-center gap-8 text-sm text-gray-500 mt-12">
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
             </div>
         </footer>
         
