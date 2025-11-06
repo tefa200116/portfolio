@@ -156,27 +156,6 @@
             color: #f0f0f0;
         }
         
-        /* Centered radial gradient for footer */
-        .footer-gradient-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 1200px;
-            height: 1200px;
-            background: radial-gradient(circle, rgba(150, 150, 150, 0.4) 0%, rgba(100, 100, 100, 0.3) 20%, rgba(50, 50, 50, 0.2) 40%, rgba(20, 20, 20, 0.1) 60%, transparent 80%);
-            pointer-events: none;
-            animation: pulse-glow 8s ease-in-out infinite;
-            z-index: 1;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-gradient-bg {
-                width: 800px;
-                height: 800px;
-            }
-        }
-        
         /* Circle card hover glow */
         .circle-card {
             transition: all 0.4s ease;
@@ -372,9 +351,6 @@
         
         <!-- FOOTER / CALL TO ACTION -->
         <footer class="relative py-32 px-6 bg-black">
-            <!-- Centered Background Gradient -->
-            <div class="footer-gradient-bg"></div>
-            
             <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
                 <!-- Main Heading -->
