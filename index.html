@@ -172,21 +172,74 @@
             transform: scale(1.05);
         }
         
-        /* Static gradient circles */
-        .static-gradient-circle {
+        /* Design-specific gradient circles */
+        .circle-base {
             position: absolute;
             border-radius: 50%;
             pointer-events: none;
-            background: radial-gradient(circle, rgba(180, 180, 180, 0.4) 0%, rgba(120, 120, 120, 0.25) 40%, transparent 70%);
-            filter: blur(2px);
         }
         
-        .static-gradient-circle-small {
+        /* Top-left solid gradient circle */
+        .circle-top-left {
+            background: radial-gradient(circle, #d8d8d8 0%, #666 30%, #000 70%);
+            opacity: 0.8;
+            filter: blur(80px);
+            width: 35vw;
+            height: 35vw;
+            top: -10%;
+            left: -10%;
+            z-index: 1;
+        }
+        
+        /* Top-right soft faded glow */
+        .circle-top-right {
+            background: radial-gradient(circle, #777 0%, transparent 70%);
+            opacity: 0.2;
+            filter: blur(80px);
+            width: 40vw;
+            height: 40vw;
+            top: 5%;
+            right: -20%;
+            z-index: 1;
+        }
+        
+        /* Left-mid faded circle */
+        .circle-left-mid {
+            background: radial-gradient(circle, #888 0%, transparent 70%);
+            opacity: 0.15;
+            filter: blur(80px);
+            width: 25vw;
+            height: 25vw;
+            left: -15%;
+            top: 45%;
+            z-index: 1;
+        }
+        
+        /* Footer main glow circle */
+        .circle-footer-main {
+            background: radial-gradient(circle, #555 0%, #222 40%, #000 70%);
+            opacity: 0.8;
+            filter: blur(80px);
+            width: 50vw;
+            height: 50vw;
+            bottom: -10%;
+            left: 25%;
+            z-index: 1;
+        }
+        
+        /* CTA button glow accents */
+        .cta-glow {
             position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
-            background: radial-gradient(circle, rgba(160, 160, 160, 0.35) 0%, rgba(100, 100, 100, 0.2) 40%, transparent 70%);
-            filter: blur(1.5px);
+            filter: blur(40px);
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         /* Fade-in animation for scroll */
@@ -295,9 +348,14 @@
         <!-- HERO SECTION -->
         <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
             
-            <!-- Static Decorative Circles - Top Right -->
-            <div class="static-gradient-circle" style="width: 400px; height: 400px; top: 15%; right: -5%;"></div>
-            <div class="static-gradient-circle-small" style="width: 280px; height: 280px; top: 20%; right: 15%;"></div>
+            <!-- Top-left solid gradient circle -->
+            <div class="circle-base circle-top-left"></div>
+            
+            <!-- Top-right soft faded glow -->
+            <div class="circle-base circle-top-right"></div>
+            
+            <!-- Left-mid faded circle -->
+            <div class="circle-base circle-left-mid"></div>
             
             <div class="relative z-10 text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 animate-fadeInUp tracking-wide">
@@ -308,9 +366,13 @@
                     Creating beautiful experiences through design, marketing, and storytelling.
                 </p>
                 
-                <a href="work.html" class="cta-button inline-block bg-white text-black px-12 py-4 rounded-lg font-semibold text-base uppercase tracking-wider animate-delay-2">
-                    Explore My Work
-                </a>
+                <div class="relative inline-block">
+                    <a href="work.html" class="cta-button inline-block bg-white text-black px-12 py-4 rounded-lg font-semibold text-base uppercase tracking-wider animate-delay-2">
+                        Explore My Work
+                    </a>
+                    <!-- CTA glow accent -->
+                    <div class="cta-glow"></div>
+                </div>
             </div>
         </section>
         
@@ -365,9 +427,13 @@
                 
                 <!-- CTA Button -->
                 <div class="text-center fade-in-scroll">
-                    <a href="work.html" class="cta-button inline-block bg-white text-black px-12 py-4 rounded-lg font-semibold text-base uppercase tracking-wider">
-                        View My Entire Portfolio
-                    </a>
+                    <div class="relative inline-block">
+                        <a href="work.html" class="cta-button inline-block bg-white text-black px-12 py-4 rounded-lg font-semibold text-base uppercase tracking-wider">
+                            View My Entire Portfolio
+                        </a>
+                        <!-- CTA glow accent -->
+                        <div class="cta-glow"></div>
+                    </div>
                 </div>
                 
             </div>
@@ -378,8 +444,8 @@
             <!-- Centered Background Gradient -->
             <div class="footer-gradient-bg"></div>
             
-            <!-- Static Decorative Circle behind LET'S CONNECT! -->
-            <div class="static-gradient-circle" style="width: 600px; height: 600px; top: 20%; left: 50%; transform: translateX(-50%); z-index: 10;"></div>
+            <!-- Footer main glow circle -->
+            <div class="circle-base circle-footer-main"></div>
             
             <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
