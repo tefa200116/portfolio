@@ -120,6 +120,65 @@
             will-change: transform, opacity;
         }
         
+        /* Additional circle variants with soft glow effects */
+        .gradient-circle-glow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(180, 180, 180, 0.4), rgba(120, 120, 120, 0.25) 25%, rgba(80, 80, 80, 0.15) 50%, transparent 80%);
+            animation: pulse-glow 9s ease-in-out infinite, float 22s ease-in-out infinite;
+            pointer-events: none;
+            filter: blur(2px);
+            will-change: transform, opacity;
+        }
+        
+        .gradient-circle-soft {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(160, 160, 160, 0.35), rgba(100, 100, 100, 0.2) 30%, rgba(60, 60, 60, 0.1) 60%, transparent 85%);
+            animation: pulse-glow 10s ease-in-out infinite, float-reverse 25s ease-in-out infinite;
+            pointer-events: none;
+            filter: blur(3px);
+            will-change: transform, opacity;
+        }
+        
+        .gradient-circle-tiny {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(130, 130, 130, 0.6), rgba(90, 90, 90, 0.4) 35%, transparent 70%);
+            animation: pulse-glow 5s ease-in-out infinite, float 12s ease-in-out infinite;
+            pointer-events: none;
+            filter: blur(0.3px);
+            will-change: transform, opacity;
+        }
+        
+        /* Solid gradient circles - NOT faded, more opaque */
+        .gradient-circle-solid {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(220, 220, 220, 0.9), rgba(180, 180, 180, 0.7) 30%, rgba(140, 140, 140, 0.5) 60%, rgba(100, 100, 100, 0.2) 85%);
+            animation: pulse-glow 7s ease-in-out infinite, float 16s ease-in-out infinite;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+        
+        .gradient-circle-solid-white {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(240, 240, 240, 0.65) 35%, rgba(200, 200, 200, 0.45) 65%, rgba(150, 150, 150, 0.2) 90%);
+            animation: pulse-glow 8s ease-in-out infinite, float-reverse 19s ease-in-out infinite;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+        
+        .gradient-circle-solid-gray {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 200, 200, 0.8), rgba(160, 160, 160, 0.6) 40%, rgba(120, 120, 120, 0.4) 70%, rgba(80, 80, 80, 0.15) 90%);
+            animation: pulse-glow 6s ease-in-out infinite, float 14s ease-in-out infinite;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+        
         /* Button hover effect */
         .cta-button {
             transition: all 0.3s ease;
@@ -296,23 +355,52 @@
         <div class="absolute inset-0 pointer-events-none z-0" style="min-height: 100%; overflow: visible;">
             <!-- Hero section area circles - upper third -->
             <div class="gradient-circle" style="width: 600px; height: 600px; top: 100px; left: -80px; animation-delay: 0s;"></div>
+            <div class="gradient-circle-glow" style="width: 700px; height: 700px; top: 50px; left: -100px; animation-delay: 1.5s;"></div>
             <div class="gradient-circle" style="width: 500px; height: 500px; top: 200px; right: -80px; animation-delay: 2s;"></div>
+            <div class="gradient-circle-soft" style="width: 650px; height: 650px; top: 150px; right: -120px; animation-delay: 3.5s;"></div>
             <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 600px; left: 12%; animation-delay: 1s;"></div>
             <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 80px; left: 48%; animation-delay: 3s;"></div>
+            <div class="gradient-circle-tiny" style="width: 200px; height: 200px; top: 150px; left: 40%; animation-delay: 2.5s;"></div>
             <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 750px; right: 18%; animation-delay: 1.5s;"></div>
             <div class="gradient-circle-medium" style="width: 450px; height: 450px; top: 450px; right: 3%; animation-delay: 2.5s;"></div>
+            <div class="gradient-circle-glow" style="width: 500px; height: 500px; top: 700px; left: 5%; animation-delay: 4s;"></div>
+            <div class="gradient-circle-tiny" style="width: 220px; height: 220px; top: 550px; right: 25%; animation-delay: 1.2s;"></div>
+            
+            <!-- Solid gradient circles - Hero area -->
+            <div class="gradient-circle-solid" style="width: 350px; height: 350px; top: 300px; left: 25%; animation-delay: 0.8s;"></div>
+            <div class="gradient-circle-solid-white" style="width: 280px; height: 280px; top: 120px; right: 35%; animation-delay: 3.2s;"></div>
+            <div class="gradient-circle-solid-gray" style="width: 320px; height: 320px; top: 500px; left: 60%; animation-delay: 1.8s;"></div>
             
             <!-- Mid-section circles (What I Do area) - middle third -->
             <div class="gradient-circle-small" style="width: 350px; height: 350px; top: 950px; left: -40px; animation-delay: 0.5s;"></div>
+            <div class="gradient-circle-soft" style="width: 600px; height: 600px; top: 900px; left: -80px; animation-delay: 3s;"></div>
             <div class="gradient-circle-medium" style="width: 400px; height: 400px; top: 1200px; right: -70px; animation-delay: 2.2s;"></div>
+            <div class="gradient-circle-glow" style="width: 550px; height: 550px; top: 1150px; right: -100px; animation-delay: 4.5s;"></div>
             <div class="gradient-circle-small" style="width: 300px; height: 300px; top: 1100px; left: 8%; animation-delay: 1.2s;"></div>
             <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 1300px; left: 48%; animation-delay: 3.5s;"></div>
+            <div class="gradient-circle-tiny" style="width: 180px; height: 180px; top: 1000px; left: 35%; animation-delay: 2s;"></div>
+            <div class="gradient-circle-tiny" style="width: 240px; height: 240px; top: 1250px; right: 20%; animation-delay: 0.8s;"></div>
+            
+            <!-- Solid gradient circles - Mid section -->
+            <div class="gradient-circle-solid-white" style="width: 300px; height: 300px; top: 1050px; right: 10%; animation-delay: 2.5s;"></div>
+            <div class="gradient-circle-solid" style="width: 340px; height: 340px; top: 1180px; left: 20%; animation-delay: 4.2s;"></div>
+            <div class="gradient-circle-solid-gray" style="width: 290px; height: 290px; top: 1350px; right: 38%; animation-delay: 1.5s;"></div>
             
             <!-- Footer section circles - lower third -->
             <div class="gradient-circle-small" style="width: 320px; height: 320px; top: 1650px; left: 6%; animation-delay: 0.8s;"></div>
+            <div class="gradient-circle-glow" style="width: 580px; height: 580px; top: 1600px; left: -50px; animation-delay: 3.8s;"></div>
             <div class="gradient-circle-medium" style="width: 380px; height: 380px; top: 1800px; right: 10%; animation-delay: 2.8s;"></div>
+            <div class="gradient-circle-soft" style="width: 620px; height: 620px; top: 1750px; right: -90px; animation-delay: 5s;"></div>
             <div class="gradient-circle-small" style="width: 280px; height: 280px; top: 2000px; left: 13%; animation-delay: 1.8s;"></div>
             <div class="gradient-circle-medium" style="width: 360px; height: 360px; top: 1950px; right: 6%; animation-delay: 3.2s;"></div>
+            <div class="gradient-circle-tiny" style="width: 200px; height: 200px; top: 1700px; left: 30%; animation-delay: 1.5s;"></div>
+            <div class="gradient-circle-tiny" style="width: 190px; height: 190px; top: 1900px; left: 45%; animation-delay: 2.3s;"></div>
+            <div class="gradient-circle-glow" style="width: 500px; height: 500px; top: 2100px; right: 15%; animation-delay: 4.2s;"></div>
+            
+            <!-- Solid gradient circles - Footer area -->
+            <div class="gradient-circle-solid" style="width: 310px; height: 310px; top: 1720px; right: 25%; animation-delay: 3.5s;"></div>
+            <div class="gradient-circle-solid-white" style="width: 270px; height: 270px; top: 1850px; left: 18%; animation-delay: 2.8s;"></div>
+            <div class="gradient-circle-solid-gray" style="width: 330px; height: 330px; top: 2020px; right: 12%; animation-delay: 4s;"></div>
         </div>
         
         <!-- HERO SECTION -->
