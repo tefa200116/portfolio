@@ -172,6 +172,23 @@
             transform: scale(1.05);
         }
         
+        /* Static gradient circles */
+        .static-gradient-circle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(180, 180, 180, 0.4) 0%, rgba(120, 120, 120, 0.25) 40%, transparent 70%);
+            filter: blur(2px);
+        }
+        
+        .static-gradient-circle-small {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(160, 160, 160, 0.35) 0%, rgba(100, 100, 100, 0.2) 40%, transparent 70%);
+            filter: blur(1.5px);
+        }
+        
         /* Fade-in animation for scroll */
         .fade-in-scroll {
             opacity: 0;
@@ -278,6 +295,10 @@
         <!-- HERO SECTION -->
         <section class="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
             
+            <!-- Static Decorative Circles - Top Right -->
+            <div class="static-gradient-circle" style="width: 400px; height: 400px; top: 15%; right: -5%;"></div>
+            <div class="static-gradient-circle-small" style="width: 280px; height: 280px; top: 20%; right: 15%;"></div>
+            
             <div class="relative z-10 text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 animate-fadeInUp tracking-wide">
                     CREATE STORIES<br>WITH DESIGN
@@ -356,6 +377,9 @@
         <footer class="relative py-32 px-6">
             <!-- Centered Background Gradient -->
             <div class="footer-gradient-bg"></div>
+            
+            <!-- Static Decorative Circle behind LET'S CONNECT! -->
+            <div class="static-gradient-circle" style="width: 600px; height: 600px; top: 20%; left: 50%; transform: translateX(-50%); z-index: 10;"></div>
             
             <div class="relative z-20 container mx-auto max-w-4xl text-center">
                 
