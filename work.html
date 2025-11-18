@@ -5,61 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work - Portfolio</title>
     
-    <!-- Tailwind CSS - Note: For production, consider building Tailwind CSS properly -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Fallback check for Tailwind CSS loading
-        window.addEventListener('load', function() {
-            if (typeof tailwind === 'undefined') {
-                console.error('Tailwind CSS failed to load. The site may appear unstyled.');
-                // Retry loading after a delay
-                setTimeout(function() {
-                    var script = document.createElement('script');
-                    script.src = 'https://cdn.tailwindcss.com';
-                    script.onerror = function() {
-                        console.error('Tailwind CSS retry also failed. Please check your internet connection or build Tailwind CSS locally.');
-                    };
-                    document.head.appendChild(script);
-                }, 2000);
-            }
-        });
-    </script>
+    <!-- Tailwind CSS - Built locally for reliability -->
+    <link rel="stylesheet" href="css/tailwind.css">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Custom Styles & Tailwind Config -->
-    <script>
-        // Wait for Tailwind to be available before configuring
-        (function() {
-            function configureTailwind() {
-                if (typeof tailwind !== 'undefined') {
-                    tailwind.config = {
-                        theme: {
-                            extend: {
-                                colors: {
-                                    'brand-black': '#000000',
-                                    'dark-gray': '#242020',
-                                    'medium-gray': '#363636',
-                                    'medium-light-gray': '#423b3b',
-                                    'light-gray': '#dfdfdf',
-                                    'brand-white': '#ffffff'
-                                },
-                                fontFamily: {
-                                    'display': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-                                    'sans': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
-                                }
-                            }
-                        }
-                    };
-                } else {
-                    // Retry if Tailwind isn't loaded yet
-                    setTimeout(configureTailwind, 100);
-                }
-            }
-            configureTailwind();
-        })();
-    </script>
     
     <style>
         body {
